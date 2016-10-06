@@ -17,9 +17,9 @@ public class ConexionBD {
 	 */
 	public static boolean iniciarConexion() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			conexion = DriverManager
-					.getConnection("jdbc:mysql://localhost/TuBaseDeDatos?user=TuUsuario&password=TuPass");
+					.getConnection("jdbc:mysql://127.11.148.2:3306/socialsport?user=adminNhxVfzE&password=wf-QyTaE11-l");
 			if (conexion != null) {
 				return true;
 			}
@@ -27,13 +27,17 @@ public class ConexionBD {
 			e.printStackTrace();
 			System.out.println("Conexion fallida");
 		} catch (ClassNotFoundException e) {
-			System.out.println("Driver JDBC de PostgreSQL no encontrado");
+			System.out.println("Driver JDBC de MySQL no encontrado");
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
 		}
 		return false;
 	}
 
 	/**
-	 * Devuelve la conexion a la base de datos PostgreSQL inicializada
+	 * Devuelve la conexion a la base de datos MySQL inicializada
 	 * anteriormente
 	 */
 	public static Connection getConexion() {
@@ -41,7 +45,7 @@ public class ConexionBD {
 	}
 
 	/**
-	 * Cierra la conexion de la base de datos PostgreSQL inicializada
+	 * Cierra la conexion de la base de datos MySQL inicializada
 	 * anteriormente
 	 */
 	public static void cerrarConexion() {

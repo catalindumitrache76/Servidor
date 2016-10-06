@@ -1,17 +1,11 @@
-apply plugin: 'eclipse-wtp'
 apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
 
 buildscript {
   repositories {
 	mavenCentral()
   }
   dependencies {
-    classpath 'mysql:mysql-connector-java:5.1.16'
+    classpath 'mysql:mysql-connector-java:5.1.21'
   }
-}
-
-eclipse {
-   project {
-      name = 'SocialSport'
-   }
 }

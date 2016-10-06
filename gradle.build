@@ -1,9 +1,0 @@
-eclipse {
-   project {
-      name = "SocialSport"
-   }
-}
-
-dependencies {
-
-}
