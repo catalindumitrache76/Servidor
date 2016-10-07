@@ -1,9 +1,12 @@
+package test;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.*;
 import org.junit.Test;
 
-public class testBD {
+import main.RepositorioDeporte;
+
+public class BDTest {
 	
 	static RepositorioDeporte repo;
 	
