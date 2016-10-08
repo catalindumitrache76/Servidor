@@ -5,3 +5,9 @@ target
 .project
 .classpath
 .gradle/*
+
+# IntelliJ project files
+.idea/
+*.iml
+out/
+gen/
