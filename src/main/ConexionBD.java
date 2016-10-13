@@ -20,7 +20,7 @@ public class ConexionBD {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			conexion = DriverManager
-					.getConnection("jdbc:mysql://127.11.148.2:3306/socialsport?user=adminNhxVfzE&password=wf-QyTaE11-l");
+					.getConnection("jdbc:mysql://db4free.net:3306/socialsport?user=socialsport&password=socialsport");
 			if (conexion != null) {
 				return true;
 			}

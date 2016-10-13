@@ -4,32 +4,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class RepositorioDeporte {
+public class RepositorioUsuario {
 
 	private Connection conexion = null;
 
 	/**
 	 * Metodo creador
 	 */
-	public RepositorioDeporte() {
+	public RepositorioUsuario() {
 		ConexionBD.iniciarConexion();
 		this.conexion = ConexionBD.getConexion();
 	}
-
-	public Deporte findDeporte(String nombre) {
-		Deporte deporte = null;
+	
+	public Usuario findUsuario(String email) {
+		Usuario usuario = null;
 		try {
-			String sql = "SELECT * FROM Deporte WHERE Nombre='"+nombre+"'";
+			String sql = "SELECT * FROM Usuario WHERE email='"+email+"'";
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			rs.first();
-			deporte = new Deporte(rs.getString("Nombre"));
+			usuario = new Usuario(rs.getString("email"),rs.getString("nombre"),
+					rs.getString("apellidos"),rs.getString("foto"),rs.getString("fecha_nacimiento"));
 			stmt.close();
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Error en buscar Deporte");
 		}
-		return deporte;
+		return usuario;
 	}
 }
