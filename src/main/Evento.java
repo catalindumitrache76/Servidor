@@ -15,6 +15,13 @@ public class Evento {
 		this.creador=creador;
 	}
 
+	public Evento(String fecha, String hora, String deporte, String creador) {
+		this.fecha=fecha;
+		this.hora=hora;
+		this.deporte=deporte;
+		this.creador=creador;
+	}
+
 	public int getId() {
 		return id;
 	}

@@ -18,6 +18,15 @@ public class Comentario {
 		this.usuario=usuario;
 		this.evento=evento;
 	}
+	
+	public Comentario(String fecha, String texto,
+			String hora, String usuario, int evento) {
+		this.fecha=fecha;
+		this.texto=texto;
+		this.hora=hora;
+		this.usuario=usuario;
+		this.evento=evento;
+	}
 
 	public int getId() {
 		return id;
