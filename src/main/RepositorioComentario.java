@@ -31,7 +31,7 @@ public class RepositorioComentario {
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("Error en buscar Deporte");
+			System.out.println("Error en buscar Comentario");
 		}
 		return comentario;
 	}

@@ -6,15 +6,17 @@ public class Usuario {
 	private String nick;
 	private String nombre;
 	private String apellidos;
+	private String contrasena;
 	private String foto;
 	private String fecha_nacimiento;
 
 	public Usuario(String email, String nick, String nombre, String apellidos,
-			String foto, String fecha_nacimiento) {
+			String foto, String contrasena, String fecha_nacimiento) {
 		this.email=email;
 		this.nick=nick;
 		this.nombre=nombre;
 		this.apellidos=apellidos;
+		this.contrasena=contrasena;
 		this.foto=foto;
 		this.fecha_nacimiento=fecha_nacimiento;
 	}
@@ -49,6 +51,14 @@ public class Usuario {
 
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 	public String getFoto() {
