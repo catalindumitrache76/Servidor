@@ -38,7 +38,7 @@ public class BDTest {
 	public void testFindDeporte() {
 		assertEquals(repoDeporte.findDeporte("prueba").getNombre(), "prueba");
 	}
-	
+
 	@Test
 	public void testListarDeportes() {
 		List<Deporte> deportes = repoDeporte.listarDeportes();
@@ -49,25 +49,25 @@ public class BDTest {
 	public void testFindUsuario() {
 		assertEquals(repoDeporte.findDeporte("prueba").getNombre(), "prueba");
 	}	
-	/*
+
 	@Test
-	public void testInsertarUsuario() {
-		Usuario usuario = new Usuario("prueba","prueba","prueba","prueba",
-				"prueba", "12-6-1994");
+	public void AtestInsertarUsuario() {
+		Usuario usuario = new Usuario("prueba","prueba3","prueba",
+				"prueba", "1994-11-11", "prueba", "prueba");
 		assertTrue(repoUsuario.insertarUsuario(usuario));
 	}
-	
+
 	@Test
 	public void testActualizarUsuario() {
-		Usuario usuario = new Usuario("prueba","123","123","123",
-				"123", "12-6-1994");
+		Usuario usuario = new Usuario("prueba","prueba","prueba",
+				"prueba", "1994-12-06", "prueba", "prueba");
 		assertTrue(repoUsuario.actualizarUsuario(usuario));
 	}
-	
+
 	@Test
 	public void testEliminarUsuario() {
 		assertTrue(repoUsuario.borrarUsuario("prueba"));
-	}*/
+	}
 
 	@Test
 	public void testFindComentario() {

@@ -3,15 +3,15 @@ package main;
 public class Usuario {
 
 	private String email;
-	private String nick;
 	private String nombre;
 	private String apellidos;
 	private String contrasena;
-	private String foto;
 	private String fecha_nacimiento;
+	private String foto;
+	private String nick;
 
-	public Usuario(String email, String nick, String nombre, String apellidos,
-			String foto, String contrasena, String fecha_nacimiento) {
+	public Usuario(String email, String nombre, String apellidos,
+			String contrasena, String fecha_nacimiento, String foto, String nick) {
 		this.email=email;
 		this.nick=nick;
 		this.nombre=nombre;

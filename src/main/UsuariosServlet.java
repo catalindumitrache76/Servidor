@@ -25,14 +25,21 @@ public class UsuariosServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String response = null;
-		String email = (String) req.getAttribute("email");
+		/*String email = (String) req.getAttribute("email");
 		String nick = (String) req.getAttribute("nick");
 		String nombre = (String) req.getAttribute("nombre");
 		String apellidos = (String) req.getAttribute("apellidos");
 		String contrasena = (String) req.getAttribute("contrasena");
 		String foto = (String) req.getAttribute("foto");
-		String fecha_nacimiento = (String) req.getAttribute("fecha_nacimiento");
-		Usuario usuario = new Usuario(email,nick,nombre,apellidos,contrasena,foto,fecha_nacimiento);
+		String fecha_nacimiento = (String) req.getAttribute("fecha_nacimiento");*/
+		String email = req.getParameter("email");
+		String nick = req.getParameter("nick");
+		String nombre = req.getParameter("nombre");
+		String apellidos = req.getParameter("apellidos");
+		String contrasena = req.getParameter("contrasena");
+		String foto = req.getParameter("foto");
+		String fecha_nacimiento = req.getParameter("fecha_nacimiento");
+		Usuario usuario = new Usuario(email,nombre,apellidos,contrasena,fecha_nacimiento,foto,nick);
 		boolean realizado = repo.insertarUsuario(usuario);
 		if (realizado) {
 			resp.setStatus(HttpServletResponse.SC_OK);
@@ -49,8 +56,10 @@ public class UsuariosServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String response = null;
-		String email = (String) req.getAttribute("email");
-		String contrasena = (String) req.getAttribute("contrasena");
+		String email = req.getParameter("email");
+		String contrasena = req.getParameter("contrasena");
+		/*String email = (String) req.getAttribute("email");
+		String contrasena = (String) req.getAttribute("contrasena");*/
 		Usuario usuario = repo.findUsuario(email);
 		if (usuario != null && contrasena.equals(usuario.getContrasena())) {
 			resp.setStatus(HttpServletResponse.SC_OK);

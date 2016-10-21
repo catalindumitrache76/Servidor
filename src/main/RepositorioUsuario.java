@@ -23,8 +23,8 @@ public class RepositorioUsuario {
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			rs.first();
-			usuario = new Usuario(rs.getString("email"),rs.getString("nick"),rs.getString("nombre"),
-					rs.getString("apellidos"),rs.getString("contrasena"),rs.getString("foto"),rs.getString("fecha_nacimiento"));
+			usuario = new Usuario(rs.getString("email"),rs.getString("nombre"),
+					rs.getString("apellidos"),rs.getString("contrasena"),rs.getString("fecha_nacimiento"),rs.getString("foto"),rs.getString("nick"));
 			stmt.close();
 		}
 		catch (SQLException e) {
@@ -34,9 +34,10 @@ public class RepositorioUsuario {
 	}
 
 	public boolean insertarUsuario(Usuario usuario) {
-		String sql = "INSERT INTO Usuario (email,nick,nombre,apellidos,contrasena,foto,"
-				+ "fecha_nacimiento)VALUES "
-				+ "('"+usuario.getEmail()+"','"+usuario.getNombre()+"','"+usuario.getApellidos()+"','"+usuario.getContrasena()+"','"+usuario.getFoto()+"','"+usuario.getFecha_nacimiento()+"')";
+		String sql = "INSERT INTO Usuario"
+				+ "(email, nombre, apellidos, contrasena, fecha_nacimiento, foto, nick)"
+				+ " VALUES (\""+usuario.getEmail()+"\",\""+usuario.getNombre()+"\",\""+usuario.getApellidos()+"\",\""
+				+usuario.getContrasena()+"\",\""+usuario.getFecha_nacimiento()+"\",\""+usuario.getFoto()+"\",\""+usuario.getNick()+"\")";
 		try {
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sql);
@@ -50,10 +51,10 @@ public class RepositorioUsuario {
 	}
 
 	public boolean borrarUsuario(String email) {
-		String sql = "DELETE FROM Usuario WHERE email='"+email+"'";
+		String sql = "DELETE FROM Usuario WHERE email=\""+email+"\"";
 		try {
 			Statement stmt = conexion.createStatement();
-			stmt.executeQuery(sql);
+			stmt.execute(sql);
 			stmt.close();
 			return true;
 		}
@@ -64,13 +65,13 @@ public class RepositorioUsuario {
 	}
 
 	public boolean actualizarUsuario (Usuario usuario) {
-		String sql = "UPDATE Usuario SET nick="+usuario.getNick()+", nombre="+usuario.getNombre()+","
-				+ "apellidos="+usuario.getApellidos()+", contrasena="+usuario.getContrasena()+", foto="+usuario.getFoto()+","
-				+ " fecha_nacimiento="+usuario.getFecha_nacimiento()+" "
-				+ "WHERE email='"+usuario.getEmail()+"'";
+		String sql = "UPDATE Usuario SET email=\""+usuario.getEmail()+"\" , nombre=\""+usuario.getNombre()+"\","
+				+ "apellidos=\""+usuario.getApellidos()+"\", contrasena=\""+usuario.getContrasena()+"\", "
+				+ " foto=\""+usuario.getFoto()+"\", fecha_nacimiento=\""+usuario.getFecha_nacimiento()+"\", nick=\""+usuario.getNick()+"\" "
+				+ "WHERE email=\""+usuario.getEmail()+"\"";
 		try {
 			Statement stmt = conexion.createStatement();
-			stmt.executeQuery(sql);
+			stmt.execute(sql);
 			stmt.close();
 			return true;
 		}
