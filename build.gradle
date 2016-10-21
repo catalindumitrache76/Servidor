@@ -1,4 +1,6 @@
 apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
 apply plugin: 'eclipse-wtp'
 
 repositories {
@@ -13,3 +15,8 @@ dependencies {
 test {
 	include 'test/**'
 }
+war{
+ archiveName = 'ROOT.war'
+ destinationDir = file('webapps')
+}
+jettyRunWar.contextPath = '' 
