@@ -8,13 +8,13 @@ import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 
-import main.Deporte;
-import main.RepositorioComentario;
-import main.RepositorioDeporte;
-import main.RepositorioEvento;
-import main.RepositorioMensaje;
-import main.RepositorioUsuario;
-import main.Usuario;
+import main.modelo.Deporte;
+import main.modelo.RepositorioComentario;
+import main.modelo.RepositorioDeporte;
+import main.modelo.RepositorioEvento;
+import main.modelo.RepositorioMensaje;
+import main.modelo.RepositorioUsuario;
+import main.modelo.Usuario;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BDTest {

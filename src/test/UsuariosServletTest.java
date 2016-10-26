@@ -18,9 +18,9 @@ import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-import main.RepositorioUsuario;
-import main.Usuario;
-import main.UsuariosServlet;
+import main.controlador.UsuariosServlet;
+import main.modelo.RepositorioUsuario;
+import main.modelo.Usuario;
 
 public class UsuariosServletTest {
 
