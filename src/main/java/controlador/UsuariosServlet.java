@@ -1,4 +1,4 @@
-package main.java.controlador;
+package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.modelo.RepositorioUsuario;
-import main.java.modelo.Usuario;
+import modelo.RepositorioUsuario;
+import modelo.Usuario;
 
 /**
  * Servlet de obtencion de usuaiors
