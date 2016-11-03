@@ -13,41 +13,41 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target =".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Social Sport</a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-          <li><a href="#">Configuración</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Perfil<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li class="dropdown-header">Perfil de "nombre usuario"</li>
-							<li> <a href="#">Mi perfil</a></li>
-              <li class="divider"></li>
-							<li> <a href="#deportes" data-toggle="modal">Mis deportes</a></li>
-							<li> <a href="#eventos" data-toggle="modal">Mis eventos</a></li>
-							<li> <a href="#amigos" data-toggle="modal">Mis amigos</a></li>
-              <li> <a href="#mensajes" data-toggle="modal">Mis mensajes</a></li>
-              <li class="divider"></li>
-              <li> <a href="#">Crear evento</a></li>
-              <li class="divider"></li>
-              <li> <a href="#">Cerrar sesión</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+  	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  		<div class="container">
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target =".navbar-collapse">
+  					<span class="sr-only">Toggle navigation</span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+  				<a class="navbar-brand" href="#">Social Sport</a>
+  			</div>
+  			<div class="navbar-collapse collapse">
+  				<ul class="nav navbar-nav navbar-right">
+  					<li class="active"><a href="#">Home</a></li>
+  					<li><a href="#">About</a></li>
+            <li><a href="#">Configuración</a></li>
+  					<li class="dropdown">
+  						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Perfil<b class="caret"></b></a>
+  						<ul class="dropdown-menu">
+  							<li class="dropdown-header">Perfil de "nombre usuario"</li>
+  							<li> <a href="#">Mi perfil</a></li>
+                <li class="divider"></li>
+  							<li> <a href="#deportes" data-toggle="modal">Mis deportes</a></li>
+  							<li> <a href="#eventos" data-toggle="modal">Mis eventos</a></li>
+  							<li> <a href="#amigos" data-toggle="modal">Mis amigos</a></li>
+                <li> <a href="#mensajes" data-toggle="modal">Mis mensajes</a></li>
+                <li class="divider"></li>
+                <li> <a href="#">Crear evento</a></li>
+                <li class="divider"></li>
+                <li> <a href="#">Cerrar sesión</a></li>
+  						</ul>
+  					</li>
+  				</ul>
+  			</div>
 		</div>
 	</div>
 
@@ -71,7 +71,7 @@
           <img src="imagenes/Sports.png" alt="Sports Bootstrap Theme">
         </a>
 				<p>Añade los deportes que más te gustan, suscríbete a eventos existentes y crea tus propios eventos</p>
-				<a href="#" class="btn btn-primary">Añade deportes</a>
+				<a href="#añadeDeportes" class="btn btn-primary" data-toggle="modal">Añade deportes</a>
 			</div>
 			<div class="col-xs-6">
 
@@ -87,6 +87,90 @@
 	</div>
 
 
+
+  <div class="modal fade text-center" id="añadeDeportes" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4><b> Deportes disponibles: </b></h4>
+        </div>
+        <div class="modal-body">
+          <!-- abrimos lista deportes -->
+
+
+
+          <div class="container" id="containerDeportes">
+              <div class="row">
+
+                  <div class="list-group" id="listDeportes">
+                    <a href="#" class="list-group-item active" id="itemDeporte">
+                          <div class="media col-md-3">
+                              <figure class="pull-left">
+                                  <img class="media-object img-rounded img-responsive"  src="http://www.extraescolaresgeniales.com/wp-content/uploads/2016/07/Ping-pong1.jpg" alt="placehold.it/350x250" >
+                              </figure>
+                          </div>
+                          <div class="col-md-6">
+                              <h4 class="list-group-item-heading"> Ping pong </h4>
+                              <p class="list-group-item-text"> Descripción sobre el ping pong </p>
+                          </div>
+                          <div class="col-md-3 text-center">
+
+                              <button type="button" class="btn btn-default btn-lg btn-block"  id = "bSuscribete"> Suscribete </button>
+                              <h5> 14240 <small> personas </small></h5>
+                          </div>
+                    </a>
+
+
+                    <a href="#" class="list-group-item"  id="itemDeporte">
+                          <div class="media col-md-3">
+                              <figure class="pull-left">
+                                  <img class="media-object img-rounded img-responsive" src="http://img.planetafobal.com/2016/02/copa-america-centenario-ball-nike-2016-350x250.jpg" alt="placehold.it/350x250" >
+                              </figure>
+                          </div>
+                          <div class="col-md-6">
+                              <h4 class="list-group-item-heading"> Fútbol </h4>
+                              <p class="list-group-item-text"> Descripción sobre el fútbol </p>
+                          </div>
+                          <div class="col-md-3 text-center">
+
+                              <button type="button" class="btn btn-default btn-lg btn-block" id = "bSuscribete">Suscribete</button>
+                              <h5> 12424 <small> personas </small></h5>
+                          </div>
+                    </a>
+
+
+                    <a href="#" class="list-group-item"  id="itemDeporte">
+                          <div class="media col-md-3">
+                              <figure class="pull-left">
+                                  <img class="media-object img-rounded img-responsive" src="http://www.fedevanlacke.com.ar/agregados/fotos/9043113194d75ffeb9b1fc_h.jpg" alt="placehold.it/350x250">
+                              </figure>
+                          </div>
+                          <div class="col-md-6">
+                              <h4 class="list-group-item-heading"> Baloncesto </h4>
+                              <p class="list-group-item-text"> Descripción sobre el baloncesto probando probando probando probando probando probando  </p>
+                          </div>
+                          <div class="col-md-3 text-center">
+
+                              <button type="button" class="btn btn-default btn-lg btn-block"  id = "bSuscribete">Suscribete</button>
+                              <h5> 13540 <small> personas </small></h5>
+                          </div>
+                    </a>
+                  </div>
+          	</div>
+          </div>
+
+
+
+
+
+          <!-- cerramos lista deportes -->
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary" data-dismiss="modal"><b>Aceptar</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 	<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
@@ -167,7 +251,7 @@
       </div>
     </div>
   </div>
-  
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>

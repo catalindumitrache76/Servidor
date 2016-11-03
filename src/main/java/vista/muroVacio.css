@@ -6,7 +6,7 @@
 body {
 	padding-top:70px;
 	padding-bottom:100px;
-	background-color: #E0E0E0;
+	/*background-color: #E0E0E0;*/
 }
 
 
@@ -34,6 +34,16 @@ a.btn {
     src: url('airstrikelaser.ttf');
 }
 
-.tituloPagina {
-	color: red;
+#containerDeportes {
+	width: 100%;
+}
+#bSuscribete {
+	font-size: 100%;
+}
+a.list-group-item {
+    height:auto;
+    min-height:100px;
+}
+a.list-group-item.active small {
+    color:#fff;
 }
