@@ -2,6 +2,7 @@ package main.java.controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,17 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import main.java.modelo.Deporte;
+import main.java.modelo.RepositorioDeporte;
 import modelo.RepositorioUsuario;
 import modelo.Usuario;
 
 /**
  * Servlet de obtencion de usuaiors
  */
-@WebServlet(value = "/usuarios", name = "UsuariosServlet")
+@WebServlet(value = "/deportes", name = "DeportesServlet")
 public class DeportesServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static RepositorioUsuario repo = new RepositorioUsuario();
+	private static RepositorioDeporte repoDeporte = new RepositorioDeporte();
 
 	/**
 	 * Método para añadir usuarios a la BD a través del cliente.
@@ -27,50 +30,29 @@ public class DeportesServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		String response = null;
-		/*String email = (String) req.getAttribute("email");
-		String nick = (String) req.getAttribute("nick");
-		String nombre = (String) req.getAttribute("nombre");
-		String apellidos = (String) req.getAttribute("apellidos");
-		String contrasena = (String) req.getAttribute("contrasena");
-		String foto = (String) req.getAttribute("foto");
-		String fecha_nacimiento = (String) req.getAttribute("fecha_nacimiento");*/
-		String email = req.getParameter("email");
-		String nick = req.getParameter("nick");
-		String nombre = req.getParameter("nombre");
-		String apellidos = req.getParameter("apellidos");
-		String contrasena = req.getParameter("contrasena");
-		String foto = req.getParameter("foto");
-		String fecha_nacimiento = req.getParameter("fecha_nacimiento");
-		Usuario usuario = new Usuario(email,nombre,apellidos,contrasena,fecha_nacimiento,foto,nick);
-		boolean realizado = repo.insertarUsuario(usuario);
-		if (realizado) {
-			resp.setStatus(HttpServletResponse.SC_OK);
-			response = "El usuario se ha insertado correctamente";
-		}
-		else {
-			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			response = "El usuario no se ha podido insertar";
-		}
-		setResponse(response, resp);
+		doGet(req,resp);
 	}
 
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String response = null;
+		List<Deporte> deportes = null;
 		String email = req.getParameter("email");
-		String contrasena = req.getParameter("contrasena");
-		/*String email = (String) req.getAttribute("email");
-		String contrasena = (String) req.getAttribute("contrasena");*/
-		Usuario usuario = repo.findUsuario(email);
-		if (usuario != null && contrasena.equals(usuario.getContrasena())) {
-			resp.setStatus(HttpServletResponse.SC_OK);
-			response = "El usuario se ha logeado correctamente";
+		if (email == null) {
+			deportes = repoDeporte.listarDeportes();
+			response = "todos los deportes";
 		}
 		else {
+			deportes = repoDeporte.listarDeportesUsuario(email);
+			response = "deportes usuario";
+		}
+		if (deportes==null) {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			response = "El usuario no se ha podido logear";
+			response = "El usuario no existe";
+		}
+		else {
+			resp.setStatus(HttpServletResponse.SC_OK);
 		}
 		setResponse(response, resp);
 	}

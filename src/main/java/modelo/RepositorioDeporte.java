@@ -22,8 +22,8 @@ public class RepositorioDeporte {
 
 	public Deporte findDeporte(String nombre) {
 		Deporte deporte = null;
+		String sql = "SELECT * FROM Deporte WHERE Nombre='"+nombre+"'";
 		try {
-			String sql = "SELECT * FROM Deporte WHERE Nombre='"+nombre+"'";
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			rs.first();
@@ -68,5 +68,23 @@ public class RepositorioDeporte {
 			System.out.println("Error al suscribirse a deporte");
 			return false;
 		}
+	}
+	
+	public List<Deporte> listarDeportesUsuario(String email) {
+		List<Deporte> deportes = new LinkedList<Deporte>();
+		String sql = "SELECT Deporte.Nombre FROM Deporte,DeporteSuscrito WHERE Deporte.Nombre=DeporteSuscrito.deporte AND DeporteSuscrito.usuario='"+email+"'";
+		try {
+			Statement stmt = conexion.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				deportes.add(new Deporte(rs.getString("Nombre")));
+			}
+			stmt.close();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Error en buscar Deporte");
+		}
+		return deportes;
 	}
 }
