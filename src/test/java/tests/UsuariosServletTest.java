@@ -1,4 +1,4 @@
-package tests;
+package test.java.tests;
 
 import static org.junit.Assert.*;
 import static org.junit.matchers.JUnitMatchers.*;  // for non-hamcrest core matchers

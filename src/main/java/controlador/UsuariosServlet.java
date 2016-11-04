@@ -1,4 +1,4 @@
-package controlador;
+package main.java.controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;

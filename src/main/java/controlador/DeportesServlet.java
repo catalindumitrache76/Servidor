@@ -1,4 +1,4 @@
-package controlador;
+package main.java.controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +16,7 @@ import modelo.Usuario;
  * Servlet de obtencion de usuaiors
  */
 @WebServlet(value = "/usuarios", name = "UsuariosServlet")
-public class UsuariosServlet extends HttpServlet {
+public class DeportesServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static RepositorioUsuario repo = new RepositorioUsuario();

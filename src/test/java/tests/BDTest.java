@@ -1,4 +1,4 @@
-package tests;
+package test.java.tests;
 import static org.junit.Assert.*;
 import org.junit.runners.MethodSorters;
 
