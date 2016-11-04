@@ -6,8 +6,8 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import main.java.baseDatos.ConexionBD;
 
-import baseDatos.ConexionBD;
 public class RepositorioDeporte {
 
 	private Connection conexion = null;

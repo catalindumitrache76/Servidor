@@ -6,7 +6,8 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-import baseDatos.ConexionBD;
+import main.java.baseDatos.ConexionBD;
+
 public class RepositorioEvento {
 
 	private Connection conexion = null;

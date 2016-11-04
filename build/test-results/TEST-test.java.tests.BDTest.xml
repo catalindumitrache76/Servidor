@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.tests.BDTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-11-04T12:57:42" hostname="DESKTOP-IHO29QE" time="0.661">
+  <properties/>
+  <testcase name="AtestInsertarUsuario" classname="test.java.tests.BDTest" time="0.122"/>
+  <testcase name="testActualizarUsuario" classname="test.java.tests.BDTest" time="0.1"/>
+  <testcase name="testEliminarUsuario" classname="test.java.tests.BDTest" time="0.083"/>
+  <testcase name="testFindComentario" classname="test.java.tests.BDTest" time="0.069"/>
+  <testcase name="testFindDeporte" classname="test.java.tests.BDTest" time="0.055"/>
+  <testcase name="testFindEvento" classname="test.java.tests.BDTest" time="0.056"/>
+  <testcase name="testFindMensaje" classname="test.java.tests.BDTest" time="0.059"/>
+  <testcase name="testFindUsuario" classname="test.java.tests.BDTest" time="0.061"/>
+  <testcase name="testListarDeportes" classname="test.java.tests.BDTest" time="0.055"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

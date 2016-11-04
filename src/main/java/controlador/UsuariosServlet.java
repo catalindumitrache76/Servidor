@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.RepositorioUsuario;
-import modelo.Usuario;
+import main.java.modelo.Usuario;
+import main.java.modelo.RepositorioUsuario;
+
 
 /**
  * Servlet de obtencion de usuaiors

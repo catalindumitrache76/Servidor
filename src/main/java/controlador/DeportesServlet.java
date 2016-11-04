@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import main.java.modelo.Deporte;
 import main.java.modelo.RepositorioDeporte;
-import modelo.RepositorioUsuario;
-import modelo.Usuario;
 
 /**
  * Servlet de obtencion de usuaiors
