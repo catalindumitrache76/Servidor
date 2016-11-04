@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.BDTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-10-28T08:57:02" hostname="DESKTOP-IHO29QE" time="0.648">
+  <properties/>
+  <testcase name="AtestInsertarUsuario" classname="tests.BDTest" time="0.09"/>
+  <testcase name="testActualizarUsuario" classname="tests.BDTest" time="0.083"/>
+  <testcase name="testEliminarUsuario" classname="tests.BDTest" time="0.128"/>
+  <testcase name="testFindComentario" classname="tests.BDTest" time="0.078"/>
+  <testcase name="testFindDeporte" classname="tests.BDTest" time="0.055"/>
+  <testcase name="testFindEvento" classname="tests.BDTest" time="0.052"/>
+  <testcase name="testFindMensaje" classname="tests.BDTest" time="0.056"/>
+  <testcase name="testFindUsuario" classname="tests.BDTest" time="0.053"/>
+  <testcase name="testListarDeportes" classname="tests.BDTest" time="0.053"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
