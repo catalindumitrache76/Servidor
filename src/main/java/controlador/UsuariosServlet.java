@@ -1,4 +1,4 @@
-package main.java.controlador;
+package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.modelo.Usuario;
-import main.java.modelo.RepositorioUsuario;
+import modelo.Usuario;
+import modelo.RepositorioUsuario;
 
 
 /**
@@ -23,7 +23,7 @@ public class UsuariosServlet extends HttpServlet {
 	private static RepositorioUsuario repo = new RepositorioUsuario();
 
 	/**
-	 * Método para añadir usuarios a la BD a través del cliente.
+	 * Mï¿½todo para aï¿½adir usuarios a la BD a travï¿½s del cliente.
 	 */
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)

@@ -1,4 +1,4 @@
-package main.java.controlador;
+package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.modelo.Deporte;
-import main.java.modelo.RepositorioDeporte;
+import modelo.Deporte;
+import modelo.RepositorioDeporte;
 
 /**
  * Servlet de obtencion de usuaiors
@@ -23,7 +23,7 @@ public class DeportesServlet extends HttpServlet {
 	private static RepositorioDeporte repoDeporte = new RepositorioDeporte();
 
 	/**
-	 * Método para añadir usuarios a la BD a través del cliente.
+	 * Mï¿½todo para aï¿½adir usuarios a la BD a travï¿½s del cliente.
 	 */
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)

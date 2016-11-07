@@ -6,3 +6,7 @@ target
 .classpath
 .gradle/*
 /bin/
+.project
+.classpath
+.settings
+.DS_Store
