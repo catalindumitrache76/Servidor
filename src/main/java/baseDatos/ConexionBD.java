@@ -1,4 +1,4 @@
-package baseDatos;
+package main.java.baseDatos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

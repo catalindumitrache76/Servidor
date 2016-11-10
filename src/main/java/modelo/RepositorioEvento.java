@@ -1,4 +1,4 @@
-package modelo;
+package main.java.modelo;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-import baseDatos.ConexionBD;
+import main.java.baseDatos.ConexionBD;
 
 public class RepositorioEvento {
 

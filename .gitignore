@@ -1,9 +1,8 @@
-/target/
 .gradle/*
-/bin/
 .project
 .classpath
 .settings
 .DS_Store
-/build/
-/webapps/
+build/
+webapps/
+bin/
