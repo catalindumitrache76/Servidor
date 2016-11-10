@@ -71,6 +71,9 @@ public class UsuariosServletTest {
 		parameters.put("foto", "try");
 		parameters.put("fecha_nacimiento", "1900-10-10");
 		parameters.put("nick", "try");
+		RepositorioUsuario repoUsuario = new RepositorioUsuario();
+		//borramos porque el usuario ya existe de test anteriores
+		repoUsuario.borrarUsuario("try");
 		servlet.doPost(request, response);
 		assertEquals(response_writer.toString(),"El usuario se ha insertado correctamente");
 	}
