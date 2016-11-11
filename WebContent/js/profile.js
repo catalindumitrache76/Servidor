@@ -38,6 +38,10 @@ $(document).ready(function(e) {
     $(target).fadeIn(600);
   });
 
+  $('#configEdit1').click(function(){
+    $('#configEdit').addClass('active');
+  });
+
   //canvas off js//
   $('#menu_icon').click(function(){
     if($("#content_details").hasClass('drop_menu'))
