@@ -542,6 +542,11 @@ h4.pro-title {
 		margin-left: 10%;
 	}
 
+	.searhFriend {
+		margin-right: 0;
+		margin-left: 18%;
+	}
+
 	.nav-menu li a {
 		font-size: 11px;
 	}
