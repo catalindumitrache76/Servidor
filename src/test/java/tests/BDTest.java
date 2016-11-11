@@ -1,15 +1,15 @@
-package test.java.tests;
+package tests;
 
 import static org.junit.Assert.*;
 import org.junit.runners.MethodSorters;
 
-import main.java.modelo.Deporte;
-import main.java.modelo.RepositorioComentario;
-import main.java.modelo.RepositorioDeporte;
-import main.java.modelo.RepositorioEvento;
-import main.java.modelo.RepositorioMensaje;
-import main.java.modelo.RepositorioUsuario;
-import main.java.modelo.Usuario;
+import modelo.Deporte;
+import modelo.RepositorioComentario;
+import modelo.RepositorioDeporte;
+import modelo.RepositorioEvento;
+import modelo.RepositorioMensaje;
+import modelo.RepositorioUsuario;
+import modelo.Usuario;
 
 import java.util.List;
 

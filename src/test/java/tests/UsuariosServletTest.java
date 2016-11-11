@@ -1,4 +1,4 @@
-package test.java.tests;
+package tests;
 
 import static org.junit.Assert.*;
 import static org.junit.matchers.JUnitMatchers.*;  // for non-hamcrest core matchers
@@ -18,8 +18,8 @@ import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-import main.java.controlador.UsuariosServlet;
-import main.java.modelo.RepositorioUsuario;
+import controlador.UsuariosServlet;
+import modelo.RepositorioUsuario;
 
 public class UsuariosServletTest {
 
