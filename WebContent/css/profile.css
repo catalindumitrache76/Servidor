@@ -63,7 +63,7 @@ body {
 }
 
 .modal-content { 
-	background-color: rgb(255, 102, 0);
+	background-color: #59B2E0;
 }
 
 .modal-title {
@@ -71,9 +71,6 @@ body {
 }
 /*nav css close*/
 
-.outSesion {
-	margin-right: 50px;
-}
 
 .searhFriend {
 	margin-top: 12%;
@@ -88,9 +85,10 @@ body {
 .profile-head { 
 	display: block;
 	width:100%;
-	background-color: rgb(255, 102, 0);
+	background-color: #59B2E0;
 	float: left;
 	padding: 15px 5px;
+	border-radius: 6px;
 }
 
 .profile-head img { 
@@ -175,37 +173,38 @@ body {
 
 .nav-tabs > li > a {
 	background: #DADADA;
-	border-radius: 0;
+	border-radius: 6px;
     box-shadow: inset 0 -8px 7px -9px rgba(0,0,0,.4),-2px -2px 5px -2px rgba(0,0,0,.4);
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
 	background: #F5F5F5;
-	padding: 10px 42.5px;
+	padding: 10px 40px;
     box-shadow: inset 0 0 0 0 rgba(0,0,0,.4),-2px -3px 5px -2px rgba(0,0,0,.4);
 }
 
 .tab-pane {
 	background: #ffffff;
 	box-shadow: 0 0 4px rgba(0,0,0,.4);
-	border-radius: 0;
+	border-radius: 6px;
 	text-align: center;
 	padding: 10px;
 }
 
 .tab-content>.active {
-	margin-top:50px;
-	/*width:100% !important;*/
+	margin-top:15px;
+	margin-bottom: 10px;
 } 
 
 /* edit profile css*/
 .hve-pro {    
-	background-color: rgb(255, 102, 0);
+	background-color: #59B2E0;
 	padding: 5px; 
 	width: 100%; 
 	height: auto;
 	float: left;
 	margin-left: 2%;
+	border-radius: 6px;
 }
 
 .hve-pro p {
@@ -218,9 +217,9 @@ body {
 
 h2.register { 
 	padding: 10px 25px; 
-	text-transform:c apitalize;
+	text-transform: capitalize;
 	font-size: 25px;
-	color: rgb(255, 102, 0);
+	color: #59B2E0;
 }
 
 .fom-main { 
@@ -234,21 +233,35 @@ legend {
 }
 
 .main_form {
-	background-color: white;
+	background-color: transparent;
+	width: 100%;
 }
 
 label.control-label {
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 100; 
 	margin-bottom: 5px !important; 
-	text-align:left !important; 
+	text-align:center !important; 
 	text-transform: uppercase; 
 	color:#798288;
+	width: 100%;
+}
+
+input.form-control {
+	text-align: center;
+}
+
+textarea.form-control {
+	text-align: center;
+}
+
+select.form-control {
+	text-align: center;
 }
 
 .submit-button {
 	color: #fff;
-	background-color: rgb(255, 102, 0);
+	background-color: rgb(0, 4, 51);
 	width: 190px;
 	border: 0px solid;
 	border-radius: 0px; 
@@ -259,7 +272,7 @@ label.control-label {
 
 .submit-button:hover, .submit-button:focus {
 	color: #fff;
-	background-color: rgb(0, 4, 51);
+	background-color: #1CB94E;
 }
 
 .hint_icon {
@@ -267,7 +280,7 @@ label.control-label {
 }
 
 .form-control:focus {
-	border-color: #ff3200;
+	border-color: #1CB94E;
 }
 
 select.selectpicker { 
@@ -282,12 +295,20 @@ select.selectpicker option:first-child {
 	color: #99999c;
 }
 
-#fecha { 
-	width: 6%;
-} 976 791 1609
 
 .input-group { 
+	width: 60%;
+	margin: 0 auto;
+}
+
+.input-gs {
+	width: 20%;
+	margin: 0 auto;
+}
+
+#genero {
 	width: 100%;
+	text-align:left !important;
 }
 
 .uplod-picture {
@@ -327,7 +348,7 @@ select.selectpicker option:first-child {
 
 .uplod-file:hover, .uplod-file:focus {
 	color: #fff;
-	background-color: rgb(255, 102, 0);
+	background-color: #1CB94E;
 }
 
 h4.pro-title { 
@@ -336,7 +357,7 @@ h4.pro-title {
 	text-transform: capitalize; 
 	text-align: center;
 	padding: 10px 15px;
-	font-family: 'Bitter', serif;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .bio-table { 
@@ -367,7 +388,7 @@ h4.pro-title {
 	margin: 5px 5px 5px 5px;
 	position: relative;
 	display: block;
-	padding: 10px 40px;
+	padding: 10px 30px;
 	border: 0px solid !important;
 	box-shadow: none !important;
 	background-color: rgb(0, 4, 51) !important;
@@ -376,7 +397,7 @@ h4.pro-title {
 }
 
 .nav-menu li.active a {
-	background-color: rgb(255, 102, 0) !important;
+	background-color: #1CB94E !important;
 }
 
 .stick{
@@ -412,11 +433,6 @@ h4.pro-title {
 		transition: all ease 0.5s;
 		border-top: 0px solid;
 		cursor: pointer;
-	}
-
-	.outSesion {
-		margin-right: 0;
-		margin-left: 75%;
 	}
 
 	.searhFriend {
@@ -468,16 +484,21 @@ h4.pro-title {
 		border-top: 0px solid;
 		cursor: pointer;
 	}
+
+	.input-group { 
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.input-gs {
+		width: 60%;
+		margin: 0 auto;
+	}
 }
 
 @media all and (max-width:430px){
 	.profile-head ul li {
 		font-size: 12px !important;
-	}
-
-	.outSesion {
-		margin-right: 0;
-		margin-left: 55%;
 	}
 
 	.searhFriend {
@@ -488,6 +509,16 @@ h4.pro-title {
 	#perfilInfo {
 		margin-right: 0;
 		margin-left: 16%;
+	}
+
+	.input-group { 
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.input-gs {
+		width: 50%;
+		margin: 0 auto;
 	}
 
 	.hve-pro {
