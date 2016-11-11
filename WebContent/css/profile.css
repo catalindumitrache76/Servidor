@@ -1,5 +1,6 @@
 body { 
 	background:#ffffff;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 /*nav css*/
@@ -227,7 +228,7 @@ h2.register {
 }
 
 legend {
-	font-family: 'Bitter', serif;
+	font-family: 'Noto Sans', sans-serif;
 	color: #ff3200;
 	border-bottom: 0px solid;
 }
@@ -388,6 +389,7 @@ h4.pro-title {
 	margin: 5px 5px 5px 5px;
 	position: relative;
 	display: block;
+	text-align: center;
 	padding: 10px 30px;
 	border: 0px solid !important;
 	box-shadow: none !important;
@@ -531,5 +533,16 @@ h4.pro-title {
 
 	.bio-table>tbody>tr>td {
 		font-size: 13px;
+	}
+}
+
+@media all and (max-width:400px){
+	#perfilInfo {
+		margin-right: 0;
+		margin-left: 10%;
+	}
+
+	.nav-menu li a {
+		font-size: 11px;
 	}
 }
