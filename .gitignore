@@ -10,4 +10,4 @@ target
 .settings/*
 !.settings/.jsdtscope
 .openshift
-WebContent/WEB-INF/classes/
+WebContent/WEB-INF/classes/*
