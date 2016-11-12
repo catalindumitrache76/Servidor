@@ -1,7 +1,6 @@
 package tests;
 
 import static org.junit.Assert.*;
-import static org.junit.matchers.JUnitMatchers.*;  // for non-hamcrest core matchers
 import static org.mockito.Mockito.*;
 
 import java.io.IOException;
@@ -36,7 +35,6 @@ public class UsuariosServletTest {
 		request = mock(HttpServletRequest.class);
 		response = mock(HttpServletResponse.class);
 		response_writer = new StringWriter();
-
 		when(request.getParameter(anyString())).thenAnswer(new Answer<String>() {
 			public String answer(InvocationOnMock invocation) {
 				return parameters.get((String) invocation.getArguments()[0]);
@@ -46,7 +44,7 @@ public class UsuariosServletTest {
 	}
 
 	@Test
-	public void testGetErroneo() throws Exception {
+	public void testLoginErroneo() throws Exception {
 		parameters.put("email", "asd");
 		parameters.put("contrasena", "asdafgh");
 		servlet.doGet(request, response);
@@ -54,7 +52,7 @@ public class UsuariosServletTest {
 	}
 	
 	@Test
-	public void testGetOK() throws Exception {
+	public void testLoginOK() throws Exception {
 		parameters.put("email", "test");
 		parameters.put("contrasena", "test");
 		servlet.doGet(request, response);
@@ -63,7 +61,7 @@ public class UsuariosServletTest {
 	
 	
 	@Test
-	public void testPostOK() throws Exception {
+	public void testRegistrarOK() throws Exception {
 		parameters.put("email", "try");
 		parameters.put("nombre", "try");
 		parameters.put("apellidos", "try");
@@ -79,7 +77,7 @@ public class UsuariosServletTest {
 	}
 	
 	@Test
-	public void testPostErroneo() throws Exception {
+	public void testRegistrarErroneo() throws Exception {
 		parameters.put("email", "try");
 		parameters.put("nombre", "try");
 		parameters.put("apellidos", "try");
@@ -92,5 +90,31 @@ public class UsuariosServletTest {
 		repoUsuario.borrarUsuario("try");
 		servlet.doPost(request, response);
 		assertEquals(response_writer.toString(),"El usuario no se ha podido insertar");
+	}
+	
+	@Test
+	public void testActualizarOK() throws Exception {
+		parameters.put("email", "try");
+		parameters.put("nombre", "try");
+		parameters.put("apellidos", "try2");
+		parameters.put("contrasena", "try");
+		parameters.put("foto", "try");
+		parameters.put("fecha_nacimiento", "1900-10-10");
+		parameters.put("nick", "try");
+		servlet.doPut(request, response);
+		assertEquals(response_writer.toString(),"El usuario se ha actualizado correctamente");
+	}
+	
+	@Test
+	public void testActualizarErroneo() throws Exception {
+		parameters.put("email", "test");
+		parameters.put("nombre", "try");
+		parameters.put("apellidos", "try");
+		parameters.put("contrasena", "try");
+		parameters.put("foto", "try");
+		parameters.put("fecha_nacimiento", "asdasdasdasd");
+		parameters.put("nick", "try");
+		servlet.doPut(request, response);
+		assertEquals(response_writer.toString(),"El usuario no se ha podido actualizar");
 	}
 }

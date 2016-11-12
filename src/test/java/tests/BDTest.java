@@ -45,6 +45,22 @@ public class BDTest {
 		List<Deporte> deportes = repoDeporte.listarDeportes();
 		assertTrue(deportes.size()>0);
 	}
+	
+	@Test
+	public void testListarDeportesUsuario() {
+		List<Deporte> deportes = repoDeporte.listarDeportesUsuario("test");
+		assertTrue(deportes.size()>0);
+	}
+	
+	@Test
+	public void testASuscribirseDeporte() {
+		assertTrue(repoDeporte.suscribirseDeporte("prueba","test"));
+	}
+	
+	@Test
+	public void testZDarseDeBajaDeporte() {
+		assertTrue(repoDeporte.darseDeBajaDeporte("prueba","test"));
+	}
 
 	@Test
 	public void testFindUsuario() {
@@ -66,7 +82,7 @@ public class BDTest {
 	}
 
 	@Test
-	public void testEliminarUsuario() {
+	public void testZEliminarUsuario() {
 		assertTrue(repoUsuario.borrarUsuario("prueba"));
 	}
 
