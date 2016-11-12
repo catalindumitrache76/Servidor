@@ -54,12 +54,12 @@ public class BDTest {
 	
 	@Test
 	public void testASuscribirseDeporte() {
-		assertTrue(repoDeporte.suscribirseDeporte("prueba","test"));
+		assertTrue(repoDeporte.suscribirseDeporte("prueba","try"));
 	}
 	
 	@Test
 	public void testZDarseDeBajaDeporte() {
-		assertTrue(repoDeporte.darseDeBajaDeporte("prueba","test"));
+		assertTrue(repoDeporte.darseDeBajaDeporte("prueba","try"));
 	}
 
 	@Test

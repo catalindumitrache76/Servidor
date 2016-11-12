@@ -94,13 +94,13 @@ public class UsuariosServletTest {
 	
 	@Test
 	public void testActualizarOK() throws Exception {
-		parameters.put("email", "try");
-		parameters.put("nombre", "try");
-		parameters.put("apellidos", "try2");
-		parameters.put("contrasena", "try");
-		parameters.put("foto", "try");
+		parameters.put("email", "test");
+		parameters.put("nombre", "test");
+		parameters.put("apellidos", "test");
+		parameters.put("contrasena", "test");
+		parameters.put("foto", "test");
 		parameters.put("fecha_nacimiento", "1900-10-10");
-		parameters.put("nick", "try");
+		parameters.put("nick", "test");
 		servlet.doPut(request, response);
 		assertEquals(response_writer.toString(),"El usuario se ha actualizado correctamente");
 	}
