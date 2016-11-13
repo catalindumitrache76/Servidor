@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.runners.MethodSorters;
 
 import modelo.Deporte;
+import modelo.Evento;
 import modelo.RepositorioComentario;
 import modelo.RepositorioDeporte;
 import modelo.RepositorioEvento;
@@ -68,7 +69,7 @@ public class BDTest {
 	}	
 
 	@Test
-	public void AtestInsertarUsuario() {
+	public void testAInsertarUsuario() {
 		Usuario usuario = new Usuario("prueba","prueba3","prueba",
 				"prueba", "1994-11-11", "prueba", "prueba");
 		assertTrue(repoUsuario.insertarUsuario(usuario));
@@ -93,7 +94,24 @@ public class BDTest {
 
 	@Test
 	public void testFindEvento() {
-		assertEquals(repoDeporte.findDeporte("prueba").getNombre(), "prueba");
+		assertEquals(repoEvento.findEvento("prueba").getDeporte(), "prueba");
+	}	
+	
+	@Test
+	public void testAInsertarEvento() {
+		Evento evento = new Evento("prueba","try","00", "00", "prueba", "test");
+		assertTrue(repoEvento.insertarEvento(evento));
+	}
+	
+	@Test
+	public void testListarEventosDeporte() {
+		assertFalse(repoEvento.listarEventosDeporte("prueba").isEmpty());
+	}
+	
+	@Test
+	public void testZBorrarEvento() {
+		int id = repoEvento.findEvento("prueba").getId();
+		assertTrue(repoEvento.borrarEvento(id));
 	}	
 
 	@Test

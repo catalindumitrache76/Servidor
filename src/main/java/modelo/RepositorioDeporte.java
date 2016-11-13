@@ -73,7 +73,6 @@ public class RepositorioDeporte {
 	
 	public boolean darseDeBajaDeporte(String nombre, String email) {
 		String sql = "DELETE FROM DeporteSuscrito WHERE deporte = '"+nombre+"' AND usuario = '"+email+"'";
-		System.out.println(sql);
 		try {
 			Statement stmt = conexion.createStatement();
 			int rs = stmt.executeUpdate(sql);
