@@ -10,17 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.Evento;
-import modelo.RepositorioEvento;
+import modelo.Amigo;
+import modelo.RepositorioAmigo;
+import modelo.RepositorioUsuario;
+import modelo.Usuario;
 
 /**
  * Servlet de obtencion de usuaiors
  */
-@WebServlet(value = "/eventos", name = "EventosServlet")
-public class EventosServlet extends HttpServlet {
+@WebServlet(value = "/amigos", name = "AmigosServlet")
+public class AmigosServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static RepositorioEvento repo = new RepositorioEvento();
+	private static RepositorioAmigo repoAmigo = new RepositorioAmigo();
+	private static RepositorioUsuario repoUsuario = new RepositorioUsuario();
 
 	/**
 	 * M�todo para a�adir usuarios a la BD a trav�s del cliente.
@@ -29,21 +32,18 @@ public class EventosServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String response = null;
-		String nombre = req.getParameter("nombre");
-		String descripcion = req.getParameter("descripcion");
+		String usuario = req.getParameter("usuario");
+		String amigoSeguido = req.getParameter("amigo");
 		String fecha = req.getParameter("fecha");
-		String hora = req.getParameter("hora");
-		String deporte = req.getParameter("deporte");
-		String creador = req.getParameter("creador");
-		Evento evento = new Evento(nombre,descripcion,fecha,hora,deporte,creador);
-		boolean realizado = repo.insertarEvento(evento);
+		Amigo amigo = new Amigo(usuario,amigoSeguido,fecha);
+		boolean realizado = repoAmigo.insertarAmigo(amigo);
 		if (realizado) {
 			resp.setStatus(HttpServletResponse.SC_OK);
-			response = "El evento se ha insertado correctamente al deporte";
+			response = "El amigo se ha insertado correctamente";
 		}
 		else {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			response = "El evento no se ha podido insertar";
+			response = "El amigo no se ha podido insertar";
 		}
 		setResponse(response, resp);
 	}
@@ -52,16 +52,16 @@ public class EventosServlet extends HttpServlet {
 	public void doDelete(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String response = null;
-		String nombre = req.getParameter("nombre");
-		int id = repo.findEvento(nombre).getId();
-		boolean realizado = repo.borrarEvento(id);
+		String usuario = req.getParameter("usuario");
+		String amigo = req.getParameter("amigo");
+		boolean realizado = repoAmigo.borrarAmigo(usuario,amigo);
 		if (realizado) {
 			resp.setStatus(HttpServletResponse.SC_OK);
-			response = "El evento se ha borrado correctamente";
+			response = "El amigo se ha borrado correctamente";
 		}
 		else {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			response = "El evento no se ha podido borrar";
+			response = "El amigo no se ha podido borrar";
 		}
 		setResponse(response, resp);
 	}
@@ -70,33 +70,21 @@ public class EventosServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String response = null;
-		List<Evento> eventos = null;
-		String deporte = req.getParameter("deporte");
+		List<Amigo> amigos = null;
 		String usuario = req.getParameter("usuario");
-		if (deporte == null) {
-
+		Usuario buscado = repoUsuario.findUsuario(usuario);
+		if (usuario == null || buscado == null) {
+			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			response = "El usuario no existe";
 		}
 		else {
-			if (usuario == null) {
-				eventos = repo.listarEventosDeporte(deporte);
-				resp.setStatus(HttpServletResponse.SC_OK);
-				if (eventos.isEmpty()) {
-					response = "El deporte no tiene eventos";
-				}
-				else {
-					response = "Eventos deporte";
-				}
+			resp.setStatus(HttpServletResponse.SC_OK);
+			amigos = repoAmigo.listarAmigos(usuario);
+			if (amigos.isEmpty()) {
+				response = "El usuario no tiene amigos";
 			}
 			else {
-				eventos = repo.listarEventosUsuario(usuario);
-				if (eventos.isEmpty()) {
-					resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-					response = "El usuario no tiene eventos";
-				}
-				else {
-					resp.setStatus(HttpServletResponse.SC_OK);
-					response = "Eventos usuario";
-				}
+				response = "Amigos";
 			}
 		}
 		setResponse(response, resp);
