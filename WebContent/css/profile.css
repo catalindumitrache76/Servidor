@@ -307,7 +307,7 @@ select.selectpicker option:first-child {
 	margin: 0 auto;
 }
 
-#genero {
+#genero,#gratuito {
 	width: 100%;
 	text-align:left !important;
 }
