@@ -7,10 +7,10 @@ import modelo.Amigo;
 import modelo.Deporte;
 import modelo.Evento;
 import modelo.RepositorioAmigo;
-import modelo.RepositorioComentario;
+//import modelo.RepositorioComentario;
 import modelo.RepositorioDeporte;
 import modelo.RepositorioEvento;
-import modelo.RepositorioMensaje;
+//import modelo.RepositorioMensaje;
 import modelo.RepositorioUsuario;
 import modelo.Usuario;
 
@@ -25,18 +25,18 @@ public class BDTest {
 
 	private static RepositorioDeporte repoDeporte;
 	private static RepositorioUsuario repoUsuario;
-	private static RepositorioComentario repoComentario;
+	//private static RepositorioComentario repoComentario;
 	private static RepositorioEvento repoEvento;
 	private static RepositorioAmigo repoAmigo;
-	private static RepositorioMensaje repoMensaje;
+	//private static RepositorioMensaje repoMensaje;
 
 	@BeforeClass
 	public static void setUp() {
 		repoDeporte = new RepositorioDeporte();
 		repoUsuario = new RepositorioUsuario();
-		repoComentario = new RepositorioComentario();
+		//repoComentario = new RepositorioComentario();
 		repoEvento = new RepositorioEvento();
-		repoMensaje = new RepositorioMensaje();
+		//repoMensaje = new RepositorioMensaje();
 		repoAmigo = new RepositorioAmigo();
 	}
 
