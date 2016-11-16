@@ -29,6 +29,6 @@ test {
 war{
  webAppDirName = 'WebContent'
  webXml = file('WebContent/WEB-INF/web.xml')
- archiveName = 'ROOT.war'
+ archiveName = 'Servidor.war'
  destinationDir = file('webapps')
 }
