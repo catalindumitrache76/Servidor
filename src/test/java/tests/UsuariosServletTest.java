@@ -45,7 +45,7 @@ public class UsuariosServletTest {
 
 	@Test
 	public void testLoginErroneo() throws Exception {
-		parameters.put("email", "asd");
+		parameters.put("username", "asd");
 		parameters.put("contrasena", "asdafgh");
 		servlet.doGet(request, response);
 		assertEquals(response_writer.toString(),"El usuario no se ha podido logear");
@@ -53,7 +53,7 @@ public class UsuariosServletTest {
 	
 	@Test
 	public void testLoginOK() throws Exception {
-		parameters.put("email", "test");
+		parameters.put("username", "test");
 		parameters.put("contrasena", "test");
 		servlet.doGet(request, response);
 		assertEquals(response_writer.toString(),"El usuario se ha logeado correctamente");
@@ -68,7 +68,7 @@ public class UsuariosServletTest {
 		parameters.put("contrasena", "try");
 		parameters.put("foto", "try");
 		parameters.put("fecha_nacimiento", "1900-10-10");
-		parameters.put("nick", "try");
+		parameters.put("username", "try");
 		RepositorioUsuario repoUsuario = new RepositorioUsuario();
 		//borramos porque el usuario ya existe de test anteriores
 		repoUsuario.borrarUsuario("try");
@@ -84,7 +84,7 @@ public class UsuariosServletTest {
 		parameters.put("contrasena", "try");
 		parameters.put("foto", "try");
 		parameters.put("fecha_nacimiento", "deberianserunosnumeros");
-		parameters.put("nick", "try");
+		parameters.put("username", "try");
 		RepositorioUsuario repoUsuario = new RepositorioUsuario();
 		//borramos porque el usuario ya existe de test anteriores
 		repoUsuario.borrarUsuario("try");
@@ -100,7 +100,7 @@ public class UsuariosServletTest {
 		parameters.put("contrasena", "test");
 		parameters.put("foto", "test");
 		parameters.put("fecha_nacimiento", "1900-10-10");
-		parameters.put("nick", "test");
+		parameters.put("username", "test");
 		servlet.doPut(request, response);
 		assertEquals(response_writer.toString(),"El usuario se ha actualizado correctamente");
 	}

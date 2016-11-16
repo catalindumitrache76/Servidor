@@ -31,7 +31,7 @@ public class RepositorioUsuario {
 			stmt.close();
 		}
 		catch (SQLException e) {
-			System.out.println("Error en buscar Usuario");
+			System.out.println("Error en buscar Usuario "+email);
 		}
 		return usuario;
 	}

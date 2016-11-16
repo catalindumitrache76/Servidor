@@ -30,7 +30,7 @@ public class UsuariosServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String response = null;
 		String email = req.getParameter("email");
-		String nick = req.getParameter("nick");
+		String nick = req.getParameter("username");
 		String nombre = req.getParameter("nombre");
 		String apellidos = req.getParameter("apellidos");
 		String contrasena = req.getParameter("contrasena");
@@ -58,7 +58,7 @@ public class UsuariosServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String response = null;
-		String email = req.getParameter("email");
+		String email = req.getParameter("username");
 		String contrasena = req.getParameter("contrasena");
 		Usuario usuario = repo.findUsuario(email);
 		if (usuario != null && contrasena.equals(usuario.getContrasena())) {
@@ -79,7 +79,7 @@ public class UsuariosServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String response = null;
 		String email = req.getParameter("email");
-		String nick = req.getParameter("nick");
+		String nick = req.getParameter("username");
 		String nombre = req.getParameter("nombre");
 		String apellidos = req.getParameter("apellidos");
 		String contrasena = req.getParameter("contrasena");
