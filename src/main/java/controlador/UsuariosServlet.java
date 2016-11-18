@@ -44,7 +44,7 @@ public class UsuariosServlet extends HttpServlet {
 		if (realizado) {
 			resp.setStatus(HttpServletResponse.SC_OK);
 			response = "El usuario se ha insertado correctamente";
-			resp.sendRedirect("muroVacio.html");
+			resp.sendRedirect("muro.html");
 		}
 		else {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -64,7 +64,7 @@ public class UsuariosServlet extends HttpServlet {
 		if (usuario != null && contrasena.equals(usuario.getContrasena())) {
 			resp.setStatus(HttpServletResponse.SC_OK);
 			response = "El usuario se ha logeado correctamente";
-			resp.sendRedirect("muroVacio.html");
+			resp.sendRedirect("muro.html");
 		}
 		else {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
