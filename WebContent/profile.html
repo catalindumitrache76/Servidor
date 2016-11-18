@@ -442,7 +442,7 @@
 
               <br />
               <div class="row">
-                <form class="form-horizontal main_form text-left" action=" " method="post"  id="contact_form">
+                <form class="form-horizontal main_form text-left" action="/Servidor/usuarios" method="put"  id="contact_form">
                   <fieldset>
                     <div class="form-group col-md-12">
                       <label class="col-md-10 control-label">Nombre</label>  
@@ -455,24 +455,14 @@
 
                     <!-- Text input-->
                     <div class="form-group col-md-12">
-                      <label class="col-md-10 control-label" >Primer Apellido</label> 
+                      <label class="col-md-10 control-label" >Apellidos</label> 
                       <div class="col-md-12 inputGroupContainer">
                         <div class="input-group">
                           <input name="apellido1" placeholder="Primer Apellido" class="form-control"  type="text">
                         </div>
                       </div>
                     </div>
-
-                    <!-- Text input-->
-                    <div class="form-group col-md-12">
-                      <label class="col-md-10 control-label" >Segundo Apellido</label> 
-                      <div class="col-md-12 inputGroupContainer">
-                        <div class="input-group">
-                          <input name="apellido2" placeholder="Segundo Apellido" class="form-control"  type="text">
-                        </div>
-                      </div>
-                    </div>
-
+                    
                      <!-- Text input-->
                     <div class="form-group col-md-12">
                       <label class="col-md-10 control-label" >Fecha de Nacimiento</label> 
@@ -482,92 +472,7 @@
                         </div>
                       </div>
                     </div>
-
-                    <!-- Text input-->
-                    <div class="form-group col-md-12">
-                      <label class="col-md-10 control-label">Número de Teléfono</label>  
-                      <div class="col-md-12 inputGroupContainer">
-                        <div class="input-group">
-                          <input name="telefono" placeholder="(+34) 697 122 122" class="form-control" type="tel">
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="form-group col-md-12">
-                      <label class="col-md-10 control-label">Dirección</label>
-                      <div class="col-md-12 inputGroupContainer">
-                        <div class="input-group">
-                          <textarea class="form-control" name="direccion" placeholder="Calle Número Esc Piso"></textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                      <label class="col-md-10 control-label">Descripción</label>
-                      <div class="col-md-12 inputGroupContainer">
-                        <div class="input-group">
-                          <textarea class="form-control" name="descripcion" placeholder="Descripción"></textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="form-group col-md-12"> 
-                      <label class="col-md-10 control-label">Deporte Favorito</label>
-                      <div class="col-md-12 selectContainer">
-                        <div class="input-group input-gs">
-                          <select name="deportes" class="form-control selectpicker" >
-                            <option>---</option>
-                            <option>Fútbol</option>
-                            <option>Baloncesto</option>
-                            <option>Cardio</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Select Basic -->
-                    <div class="form-group col-md-12"> 
-                      <label class="col-md-10 control-label">Experiencia</label>
-                      <div class="col-md-12 selectContainer">
-                        <div class="input-group input-gs">
-                          <select name="experiencia" class="form-control selectpicker" >
-                            <option>Menos de un año</option>
-                            <option>1 año</option>
-                            <option>2 - 3 años</option>
-                            <option>3 - 4 años</option>
-                            <option>5 - 6+ años</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="form-group col-md-12"> 
-                      <label class="col-md-10 control-label">País</label>
-                      <div class="col-md-12 selectContainer">
-                        <div class="input-group input-gs">
-                          <select name="pais" class="form-control selectpicker" >
-                            <option>Alemania</option>
-                            <option>España</option>
-                            <option>Suiza</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="form-group col-md-12"> 
-                      <label class="col-md-10 control-label">Ciudad</label>
-                      <div class="col-md-12 selectContainer">
-                        <div class="input-group input-gs">
-                          <select name="ciudad" class="form-control selectpicker" >
-                            <option>Barcelona</option>
-                            <option>Madrid</option>
-                            <option>Zaragoza</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
+                   
                     <div class="form-group col-md-12">
                       <label class="col-md-10 control-label">Contraseña</label>  
                       <div class="col-md-12 inputGroupContainer">
@@ -593,24 +498,7 @@
                           <input  name="confirmPassword" placeholder="Confirmar Nueva Contraseña" class="form-control"  type="password">
                         </div>
                       </div>
-                    </div>
-
-                    <!-- radio checks -->
-                    <div class="form-group col-md-12">
-                      <label class="col-md-10 control-label" id="genero">Genero</label>
-                      <div class="col-md-6">
-                        <div class="radio col-md-2">
-                          <label>
-                            <input type="radio" name="hombre" value="yes" /> Hombre
-                          </label>
-                        </div>
-                        <div class="radio col-md-2">
-                          <label>
-                            <input type="radio" name="mujer" value="no" /> Mujer
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                    </div>                    
 
                     <!-- upload profile picture -->
                     <div class="col-md-12 text-left">
