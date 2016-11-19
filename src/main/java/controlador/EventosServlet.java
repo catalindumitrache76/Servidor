@@ -39,7 +39,7 @@ public class EventosServlet extends HttpServlet {
 		boolean realizado = repo.insertarEvento(evento);
 		if (realizado) {
 			resp.setStatus(HttpServletResponse.SC_OK);
-			response = "El evento se ha insertado correctamente al deporte";
+			response = "El evento se ha insertado correctamente al deporte";			
 		}
 		else {
 			resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
