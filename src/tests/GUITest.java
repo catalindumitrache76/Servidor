@@ -28,14 +28,14 @@ public class GUITest {
 		//driver.quit();
 	} 
 	
-//	@Test
-//	public void index(){
-//		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
-//		System.err.println("ATENCIÃ“N: TEST PROBADO CON TOMCAT EN LOCALHOST");
-//		driver.get("http://localhost:8080/Servidor/index.html");	
-//		driver.findElement(By.id("iniciar")).click();
-//		System.out.println("Ending test " + new Object(){}.getClass().getEnclosingMethod().getName());
-//	}
+	@Test
+	public void index(){
+		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
+		System.err.println("ATENCIÓN: TEST PROBADO CON TOMCAT EN LOCALHOST");
+		driver.get("http://localhost:8080/Servidor/index.html");	
+		driver.findElement(By.id("iniciar")).click();
+		System.out.println("Ending test " + new Object(){}.getClass().getEnclosingMethod().getName());
+	}
 //
 //	@Test
 //	public void login(){
@@ -57,7 +57,7 @@ public class GUITest {
 	@Test
 	public void login(){
 		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
-		System.err.println("ATENCIÃ“N: TEST PROBADO CON TOMCAT EN LOCALHOST");
+		System.err.println("ATENCIÓN: TEST PROBADO CON TOMCAT EN LOCALHOST");
 		driver.get("http://localhost:8080/Servidor/signup.html");	
 		driver.findElement(By.id("login-form-link")).click();
 		driver.findElement(By.id("emailL")).sendKeys("test@test.test");
@@ -91,7 +91,7 @@ public class GUITest {
 	@Test
 	public void registro() throws InterruptedException{
 		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
-		System.err.println("ATENCIÃ“N: TEST PROBADO CON TOMCAT EN LOCALHOST");
+		System.err.println("ATENCIÓN: TEST PROBADO CON TOMCAT EN LOCALHOST");
 		driver.get("http://localhost:8080/Servidor/signup.html");	
 		driver.findElement(By.id("register-form-link")).click();
 		driver.findElement(By.id("username")).sendKeys("test");
@@ -104,7 +104,6 @@ public class GUITest {
 			System.err.println(e.getMessage());
 			System.out.println("---------- ERROR ----------");
 		}	
-		driver.findElement(By.xpath("//input[@id='email']")).click();
 		driver.findElement(By.id("apellidos")).sendKeys("test");
 		driver.findElement(By.id("fecha_nacimiento")).sendKeys("16-11-2016");
 		driver.findElement(By.id("register-submit")).click();
