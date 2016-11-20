@@ -33,7 +33,7 @@ public class GUITest {
 		System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
 		System.err.println("ATENCIÓN: TEST PROBADO CON TOMCAT EN LOCALHOST");
 		driver.get("http://localhost:8080/Servidor/index.html");	
-		driver.findElement(By.id("iniciar")).click();
+		driver.findElement(By.className("btn")).click();
 		System.out.println("Ending test " + new Object(){}.getClass().getEnclosingMethod().getName());
 	}
 //
